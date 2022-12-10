@@ -1,13 +1,16 @@
 @import "../common/variables";
 @import "../common/extends";
 @import "../common/mixins";
-
+html body {
+	padding-top: 100px;
+	background-color: $theme-primary-color;
+}
 .header {
 	background-color: $theme-primary-color;
 	top: 0%;
 	left: 0%;
 	width: 100%;
-	position:fixed;	
+	position: fixed;
 	@include transition(500ms);
 	.image-div {
 		margin: 10px;
@@ -17,6 +20,7 @@
 			width: 80px;
 		}
 	}
+
 	.nav {
 		margin-top: 20px;
 		align-self: center;

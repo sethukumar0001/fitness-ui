@@ -36,7 +36,7 @@ function Header(props: any) {
 			<nav className="nav">
 				<ul className="d-flex">
 					<li>
-						<Link href={"#"}>Home</Link>
+						<Link href={"#"}>The Workouts</Link>
 					</li>
 					<li>
 						<Link href={"#"}>Why SWEAT?</Link>

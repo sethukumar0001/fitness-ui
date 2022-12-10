@@ -1,0 +1,58 @@
+@import "../common/variables";
+@import "../common/extends";
+@import "../common/mixins";
+
+.footer {
+	background-color: $theme-primary-color;
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: $white-color;
+	padding: 90px;
+	display: flex;
+	justify-content: center;
+	.faq {
+		padding: 20px;
+		.bold {
+			@extend %bold-font;
+		}
+		a {
+			display: block;
+			text-decoration: none;
+			color: $white-color;
+			line-height: 2;
+            &:hover {
+                color: $theme-red;
+                @include transition(500ms);
+            }
+		}
+	}
+	.about {
+		padding: 20px;
+		.bold {
+			@extend %bold-font;
+		}
+		a {
+			display: block;
+			text-decoration: none;
+			color: $white-color;
+			line-height: 2;
+            &:hover {
+                color: $theme-red;
+                @include transition(500ms);
+            }
+		}
+	}
+	.social {
+		padding: 20px;
+		a {
+			padding: 10px;
+			text-decoration: none;
+		}
+	}
+	.cc {
+		padding: 20px;
+		color: $white-color;
+	}
+}

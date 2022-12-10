@@ -1,0 +1,74 @@
+/* ==========
+Define Font family
+ ========== */
+ $font-family: 'Rebyuu-font', sans-serif;
+
+ /* ==========
+  Define Font Size
+   ========== */
+ $base-font-size : 15;
+ $base-font-size-mobile: 13;
+ $heading1-font-size: 48;
+ $heading2-font-size: 36;
+ $heading3-font-size: 22;
+ $heading4-font-size: 18;
+
+ $heading1-mobile-font-size: 32;
+ $heading2-mobile-font-size: 24;
+ $heading3-mobile-font-size: 18;
+ $heading4-mobile-font-size: 14;
+
+ $heading1-tablet-font-size: 32;
+ $heading2-tablet-font-size: 24;
+ $heading3-tablet-font-size: 18;
+ $heading4-tablet-font-size: 14;
+ 
+ /* ==========
+ Define font weight
+   ========== */
+ $bold-font-weight : 700;
+ $medium-font-weight: 500;
+ $normal-font-weight: 400;
+ $light-font-weight: 300;
+ $base-border-radius: 4px;
+ 
+ 
+ /* ==========
+ Define colours
+   ========== */
+ $white-color: #ffffff;
+ $theme-primary-color: #06060d;
+ $theme-primary-light-color:#4285F4;
+ $theme-secondary-color: #E06287;
+
+ $theme-background-footer-color: #f0f5fa;
+ $theme-font-primary-color: #444F60;
+ $theme-font-heading-color: #3C4043;
+ $theme-font-black-color:#02052b;
+ $theme-font-secondary-color: #3C4043;
+ $theme-logo-color:#616161;
+ $theme-border-color: #DADCE0;
+ $theme-link-secondary-color:#5F6368;
+
+ $theme-background-secondary-color: #FAFAFA;
+
+ $theme-red:#e21c21;
+
+ /* ==========
+  Define the breakpoints at which your layout will change,
+   adapting to different screen sizes.
+  ==========  */
+ $extra-large-min: 1904;
+ 
+ $large-devices-max: ($extra-large-min - 0.02);
+ $large-devices-min : 1200;
+ 
+ $medium-devices-max : ($large-devices-min - 0.02);
+ $medium-devices-min : 992;
+ 
+ $tablet-devices-max : ($medium-devices-min - 0.02);
+ $tablet-devices-min : 768;
+ 
+ $mobile-devices-max-width : $tablet-devices-min - 0.02;
+ $small-mobile-devices-width: 480;
+ $iphone-devices-max-width : 360;

@@ -1,0 +1,48 @@
+@import "../common/variables";
+@import "../common/extends";
+@import "../common/mixins";
+
+.header {
+	background-color: $theme-primary-color;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	position:fixed;	
+	@include transition(500ms);
+	.image-div {
+		margin: 10px;
+		cursor: pointer;
+		.image {
+			height: 80px;
+			width: 80px;
+		}
+	}
+	.nav {
+		margin-top: 20px;
+		align-self: center;
+		ul {
+			list-style-type: none;
+			li {
+				a {
+					@extend %bold-font;
+					color: $white-color;
+					padding: 10px;
+					text-decoration: none;
+					&:hover {
+						color: $theme-red;
+						@include transition(500ms);
+					}
+				}
+			}
+		}
+	}
+	.profile-right {
+		align-self: center;
+		margin: 10px;
+		cursor: pointer;
+		.image {
+			height: 50px;
+			width: 50px;
+		}
+	}
+}

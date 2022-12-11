@@ -5,7 +5,7 @@ export default function Home() {
 		<Layout>
 			<div className="main">
 				<div className="section1">
-					<h1>The Workouts</h1>
+					<h1>THE WORKOUTS</h1>
 				</div>
 				<div className="section2">
 					<div className="left">

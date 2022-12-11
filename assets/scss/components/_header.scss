@@ -37,6 +37,9 @@ html body {
 						@include transition(500ms);
 					}
 				}
+				.active {
+					color: $theme-red;
+				}
 			}
 		}
 	}

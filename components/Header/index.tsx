@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { FiUser } from "react-icons/fi";
-import { FaTimes, FaBars } from "react-icons/fa";
+import { FaTimes, FaBars, FaUserCircle } from "react-icons/fa";
 
 function Header(props: any) {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -40,8 +40,7 @@ function Header(props: any) {
 
 	return (
 		<header className="header" style={{ top: visible ? "0" : "-120px" }}>
-			<img src={`/images/2.png`} className="logo" />
-
+			<img src={`/images/2.png`} className="logo" onClick={() => handleNavigateUrl(`/`)}/>
 			<nav className={`${dropdownToggled ? "responsive_nav" : ""}`}>
 				<ul>
 					<div className="logo-parent">
@@ -91,7 +90,8 @@ function Header(props: any) {
 			<button className="nav-btn" onClick={showNavbar}>
 				<FaBars size={20} />
 			</button>
-			<FiUser className="profile-icon" size={30} />
+			<div className="user-info">
+			<FaUserCircle className="profile-icon" size={25} /> <p className="p">GET STARTED</p></div>
 		</header>
 	);
 }

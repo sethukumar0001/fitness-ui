@@ -22,10 +22,17 @@
 			float: left;
 			background-color: $white-color;
 			width: 50%;
+			@media (max-width: $mobile-devices-max-width+px) {
+				width: 100%;
+				// margin-top: 2px;
+			}
 			.header1 {
 				color: #72839f;
 				display: flex;
 				justify-content: center;
+				@media (max-width: $mobile-devices-max-width+px) {
+					margin-top: 10px;
+				}
 			}
 			.desc1 {
 				color: #6c6c71;
@@ -33,20 +40,29 @@
 				width: 50%;
 				padding: 10px;
 				font-size: 18px;
+				@media (max-width: $mobile-devices-max-width+px) {
+					font-size: 12px;
+					width: 100%;
+					padding: 10px;
+				}
 			}
 		}
 		.right {
 			float: left;
+			@media (max-width: $mobile-devices-max-width+px) {
+				float: none;
+				width: 100%;
+			}
 			width: 50%;
 			img {
 				height: 50vh;
 				width: 100%;
+				@media (max-width: $mobile-devices-max-width+px) {
+					float: none;
+					max-width: 100%;
+					height: auto;
+				}
 			}
 		}
-	}
-	.section3 {
-		color: $white-color;
-		// min-height: 40vh;
-		background-color: rgb(220, 200, 241);
 	}
 }

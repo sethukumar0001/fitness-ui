@@ -1,37 +1,103 @@
 @import "../common/variables";
 @import "../common/extends";
 @import "../common/mixins";
+
 html body {
 	padding-top: 100px;
 	background-color: $theme-primary-color;
 }
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 .header {
+	position: fixed;
 	background-color: $theme-primary-color;
 	top: 0%;
 	left: 0%;
 	width: 100%;
-	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+	padding: 0 1rem;
 	@include transition(500ms);
-	.image-div {
+	overflow: hidden;
+	.logo {
+		height: 80px;
+		width: 80px;
 		margin: 10px;
-		cursor: pointer;
-		.image {
-			height: 80px;
-			width: 80px;
-		}
 	}
-
-	.nav {
-		margin-top: 20px;
-		align-self: center;
+	.profile-icon {
+		color: $theme-red;
+		cursor: pointer;
+	}
+	nav {
 		ul {
 			list-style-type: none;
-			li {
+			display: flex;
+			align-items: center;
+			margin-top: 10px;
+			a {
+				@extend %bold-font;
+				margin: 0 1rem;
+				text-decoration: none;
+				color: $white-color;
+				&:hover {
+					color: $theme-red;
+					@include transition(500ms);
+				}
+			}
+			.active {
+				color: $theme-red;
+			}
+			.nav-btn {
+				padding: 5px;
+				cursor: pointer;
+				background: transparent;
+				border: none;
+				outline: none;
+				color: red;
+				display: none;
+				opacity: 0;
+				font-size: 1.8rem;
+			}
+		}
+	}
+	.nav-btn {
+		display: none;
+	}
+}
+
+@media (max-width: $mobile-devices-max-width+px) {
+	.header {
+		z-index: 1;
+		overflow: hidden;
+		.logo {
+			display: none;
+		}
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1.5rem;
+			background-color: $theme-primary-color;
+			transition: 1s;
+			transform: translateY(-100vh);
+			ul {
+				display: block;
 				a {
-					@extend %bold-font;
-					color: $white-color;
-					padding: 10px;
-					text-decoration: none;
+					display: flex;
+					margin-bottom: 10px;
+					font-size: 1.5rem;
 					&:hover {
 						color: $theme-red;
 						@include transition(500ms);
@@ -41,15 +107,23 @@ html body {
 					color: $theme-red;
 				}
 			}
+			.nav-close-btn {
+				position: absolute;
+				top: 2rem;
+				right: 2rem;
+			}
 		}
-	}
-	.profile-right {
-		align-self: center;
-		margin: 10px;
-		cursor: pointer;
-		.image {
-			height: 50px;
-			width: 50px;
+		.nav-btn {
+			display: block;
+			opacity: 1;
+			cursor: pointer;
+			background: transparent;
+			border: none;
+			outline: none;
+			color: red;
+		}
+		.responsive_nav {
+			transform: none;
 		}
 	}
 }

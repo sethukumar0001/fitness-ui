@@ -12,6 +12,10 @@
 	padding: 90px;
 	display: flex;
 	justify-content: center;
+	@media (max-width: $mobile-devices-max-width+px) {
+		display: block;
+		width: 100%;
+	}
 	.faq {
 		padding: 20px;
 		.bold {
@@ -22,10 +26,10 @@
 			text-decoration: none;
 			color: $white-color;
 			line-height: 2;
-            &:hover {
-                color: $theme-red;
-                @include transition(500ms);
-            }
+			&:hover {
+				color: $theme-red;
+				@include transition(500ms);
+			}
 		}
 	}
 	.about {
@@ -38,10 +42,10 @@
 			text-decoration: none;
 			color: $white-color;
 			line-height: 2;
-            &:hover {
-                color: $theme-red;
-                @include transition(500ms);
-            }
+			&:hover {
+				color: $theme-red;
+				@include transition(500ms);
+			}
 		}
 	}
 	.social {
@@ -49,6 +53,15 @@
 		a {
 			padding: 10px;
 			text-decoration: none;
+			margin-top: 10px;
+			@media (max-width: $mobile-devices-max-width+px) {
+				margin: 10px;
+				img {
+					vertical-align: baseline !important;
+				}
+			}
+		}
+		@media (max-width: $mobile-devices-max-width+px) {
 		}
 	}
 	.cc {

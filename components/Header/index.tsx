@@ -33,58 +33,55 @@ function Header(props: any) {
 		toggleDropdown(!dropdownToggled);
 	};
 
+	const handleNavigateUrl = (url: string) => {
+		toggleDropdown(!dropdownToggled);
+		router.push(url);
+	};
+
 	return (
 		<header className="header" style={{ top: visible ? "0" : "-120px" }}>
 			<img src={`/images/2.png`} className="logo" />
+
 			<nav className={`${dropdownToggled ? "responsive_nav" : ""}`}>
 				<ul>
-					<li>
-						<Link
-							href={"/"}
-							className={`${router.pathname === `/` ? "active" : ""}`}
-						>
-							The Workouts
-						</Link>
+					<div className="logo-parent">
+					<img src={`/images/2.png`} className="logo-mobile" />
+					</div>
+					<li
+						onClick={() => handleNavigateUrl(`/`)}
+						className={`${router.pathname === `/` ? "active" : ""}`}
+					>
+						The Workouts
 					</li>
-					<li>
-						<Link
-							href={"/about"}
-							className={`${router.pathname === `/about` ? "active" : ""}`}
-						>
-							Why SWEAT?
-						</Link>
+					<li
+						onClick={() => handleNavigateUrl(`/about`)}
+						className={`${router.pathname === `/about` ? "active" : ""}`}
+					>
+						Why SWEAT?
 					</li>
-					<li>
-						<Link
-							href={"/try-sweat"}
-							className={`${router.pathname === `/try-sweat` ? "active" : ""}`}
-						>
-							Try SWEAT
-						</Link>
+					<li
+						onClick={() => handleNavigateUrl(`/try-sweat`)}
+						className={`${router.pathname === `/try-sweat` ? "active" : ""}`}
+					>
+						Try SWEAT
 					</li>
-					<li>
-						<Link
-							href={"/offers"}
-							className={`${router.pathname === `/offers` ? "active" : ""}`}
-						>
-							Offers
-						</Link>
+					<li
+						onClick={() => handleNavigateUrl(`/offers`)}
+						className={`${router.pathname === `/offers` ? "active" : ""}`}
+					>
+						Offers
 					</li>
-					<li>
-						<Link
-							href={"/pricing"}
-							className={`${router.pathname === `/pricing` ? "active" : ""}`}
-						>
-							Pricing
-						</Link>
+					<li
+						onClick={() => handleNavigateUrl(`/pricing`)}
+						className={`${router.pathname === `/pricing` ? "active" : ""}`}
+					>
+						Pricing
 					</li>
-					<li>
-						<Link
-							href={"/contact-us"}
-							className={`${router.pathname === `/contact-us` ? "active" : ""}`}
-						>
-							Contact Us
-						</Link>
+					<li
+						onClick={() => handleNavigateUrl(`/contact-us`)}
+						className={`${router.pathname === `/contact-us` ? "active" : ""}`}
+					>
+						Contact Us
 					</li>
 				</ul>
 				<button className="nav-btn nav-close-btn" onClick={showNavbar}>

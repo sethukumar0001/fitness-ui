@@ -14,7 +14,15 @@
 	justify-content: center;
 	@media (max-width: $mobile-devices-max-width+px) {
 		display: block;
-		width: 100%;
+		max-width: 100%;
+		padding: 70px;
+		a {
+			font-size: 14px;
+			&:hover {
+				color: $theme-red;
+				@include transition(500ms);
+			}
+		}
 	}
 	.faq {
 		padding: 20px;

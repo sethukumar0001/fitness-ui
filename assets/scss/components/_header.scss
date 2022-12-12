@@ -30,6 +30,7 @@ html body {
 		width: 80px;
 		margin: 10px;
 	}
+
 	.profile-icon {
 		color: $theme-red;
 		cursor: pointer;
@@ -40,11 +41,15 @@ html body {
 			display: flex;
 			align-items: center;
 			margin-top: 10px;
-			a {
+			.logo-mobile {
+				display: none;
+			}
+			li {
 				@extend %bold-font;
 				margin: 0 1rem;
 				text-decoration: none;
 				color: $white-color;
+				cursor: pointer;
 				&:hover {
 					color: $theme-red;
 					@include transition(500ms);
@@ -78,6 +83,7 @@ html body {
 		.logo {
 			display: none;
 		}
+
 		nav {
 			position: fixed;
 			top: 0;
@@ -93,11 +99,23 @@ html body {
 			transition: 1s;
 			transform: translateY(-100vh);
 			ul {
+				.logo-parent {
+					display: flex;
+					justify-content: center;
+					margin-bottom: 30px;
+					.logo-mobile {
+						display: flex;
+						height: 100px;
+						width: 100px;
+					}
+				}
+
 				display: block;
-				a {
+				li {
 					display: flex;
 					margin-bottom: 10px;
-					font-size: 1.5rem;
+					font-size: 1.2rem;
+					cursor: pointer;
 					&:hover {
 						color: $theme-red;
 						@include transition(500ms);

@@ -5,7 +5,7 @@ export default function Home() {
 		<Layout>
 			<div className="main">
 				<div className="section1">
-					<h1>TRY SWEAT</h1>
+					<h1>{'TRY SWEAT'}</h1>
 				</div>
 			</div>
 		</Layout>

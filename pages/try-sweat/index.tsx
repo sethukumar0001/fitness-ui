@@ -48,7 +48,7 @@ export default function Home() {
 		<Layout>
 			<div className="try-sweat-main">
 				<div className="section1">
-					<h1>{"TRY SWEAT"}</h1>
+					<h1>{"TRY FITNESS"}</h1>
 				</div>
 				<div className="section2">
 					{list.map((item: object, key: number) => {

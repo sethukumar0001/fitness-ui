@@ -58,19 +58,22 @@
 			float: left;
 			width: 50%;
 			height: 50vh;
-			// img {
-			// 	height: 50vh;
-			// 	width: 100%;
-			// 	@media (max-width: $mobile-devices-max-width+px) {
-			// 		float: none;
-			// 		max-width: 100%;
-			// 		height: auto;
-			// 	}
-			// }
-			// @media (max-width: $mobile-devices-max-width+px) {
-			// 	float: none;
-			// 	width: 100%;
-			// }
+			@media (max-width: $mobile-devices-max-width+px) {
+				height: 40vh;
+			}
+			img {
+				height: 50vh;
+				width: 100%;
+				@media (max-width: $mobile-devices-max-width+px) {
+					float: none;
+					max-width: 100%;
+					// height: auto;
+				}
+			}
+			@media (max-width: $mobile-devices-max-width+px) {
+				float: none;
+				width: 100%;
+			}
 		}
 	}
 }

@@ -1,0 +1,71 @@
+@import "../common/variables";
+@import "../common/extends";
+@import "../common/mixins";
+
+.try-sweat-main {
+	background-color: $white-color;
+	min-height: 90vh;
+	.section1 {
+		color: $white-color;
+		padding: 16vh;
+
+		background-color: $theme-secondary-color;
+		h1 {
+			text-align: center;
+		}
+	}
+	.section2 {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		width: 70%;
+		margin: 0 auto;
+		margin-top: 20px;
+		cursor: pointer;
+		.section-item {
+			width: 25%;
+			display: flex;
+			flex-direction: column;
+			.item {
+				align-items: center;
+				h3 {
+					text-align: center;
+				}
+				.logo {
+					text-align: center;
+				}
+				.desc {
+					font-size: 16px;
+					color: #6a6969;
+					padding: 20px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: $mobile-devices-max-width+px) {
+	.try-sweat-main {
+		.section1 {
+			padding: 10vh;
+		}
+		.section2 {
+			display: block;
+			width: 70%; 
+			margin: 0 auto; //it will make center of the page
+			.section-item {
+				width: 100%;
+				display: block;
+				margin-top: 5vh;
+				.item {
+					h3 {
+					}
+					.logo {
+					}
+					.desc {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

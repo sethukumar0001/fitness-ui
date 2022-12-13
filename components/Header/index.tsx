@@ -40,29 +40,38 @@ function Header(props: any) {
 
 	return (
 		<header className="header" style={{ top: visible ? "0" : "-120px" }}>
-			<img src={`/images/2.png`} className="logo" onClick={() => handleNavigateUrl(`/`)}/>
+			<img
+				src={`/images/2.png`}
+				className="logo"
+				onClick={() => handleNavigateUrl(`/`)}
+			/>
 			<nav className={`${dropdownToggled ? "responsive_nav" : ""}`}>
 				<ul>
 					<div className="logo-parent">
-					<img src={`/images/2.png`} className="logo-mobile" />
+						<img src={`/images/2.png`} className="logo-mobile" />
 					</div>
 					<li
 						onClick={() => handleNavigateUrl(`/`)}
 						className={`${router.pathname === `/` ? "active" : ""}`}
 					>
-						The Workouts
+						Home
 					</li>
 					<li
 						onClick={() => handleNavigateUrl(`/about`)}
 						className={`${router.pathname === `/about` ? "active" : ""}`}
 					>
-						Why SWEAT?
+						Why FITNESS?
+						<div className="dropdown-content">
+							<a href="#">Benefits</a>
+							<a href="#">Fitness Lab</a>
+							<a href="#">Personal Trining</a>
+						</div>
 					</li>
 					<li
 						onClick={() => handleNavigateUrl(`/try-sweat`)}
 						className={`${router.pathname === `/try-sweat` ? "active" : ""}`}
 					>
-						Try SWEAT
+						Try FITNESS
 					</li>
 					<li
 						onClick={() => handleNavigateUrl(`/offers`)}
@@ -91,7 +100,9 @@ function Header(props: any) {
 				<FaBars size={20} />
 			</button>
 			<div className="user-info">
-			<FaUserCircle className="profile-icon" size={25} /> <p className="p">GET STARTED</p></div>
+				<FaUserCircle className="profile-icon" size={25} />{" "}
+				<p className="p">GET STARTED</p>
+			</div>
 		</header>
 	);
 }

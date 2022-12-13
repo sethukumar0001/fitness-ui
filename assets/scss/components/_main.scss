@@ -8,6 +8,9 @@
 	.section1 {
 		color: $white-color;
 		padding: 16vh;
+		@media (max-width: $mobile-devices-max-width+px) {
+			padding: 10vh;
+		}
 		background-color: $theme-secondary-color;
 		h1 {
 			text-align: center;
@@ -16,6 +19,9 @@
 	.section2 {
 		color: $white-color;
 		height: 50vh;
+		@media (max-width: $mobile-devices-max-width+px) {
+			height: 40vh;
+		}
 		display: flex;
 		align-items: center;
 		.left {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { FiUser } from "react-icons/fi";
-import { FaTimes, FaBars, FaUserCircle } from "react-icons/fa";
+import { FaTimes, FaBars, FaUserCircle, FaChevronDown } from "react-icons/fa";
 
 function Header(props: any) {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -16,7 +16,7 @@ function Header(props: any) {
 		setVisible(
 			(prevScrollPos > currentScrollPos &&
 				prevScrollPos - currentScrollPos > 200) ||
-				currentScrollPos < 200
+			currentScrollPos < 200
 		);
 		// set state to new scroll position 70 10
 		setPrevScrollPos(currentScrollPos);
@@ -38,6 +38,11 @@ function Header(props: any) {
 		router.push(url);
 	};
 
+	const [open, setOpen] = useState(false)
+	const handleOpenDropdown = () => {
+		setOpen(!open)
+	}
+
 	return (
 		<header className="header" style={{ top: visible ? "0" : "-120px" }}>
 			<img
@@ -58,7 +63,7 @@ function Header(props: any) {
 					</li>
 					<li
 						onClick={() => handleNavigateUrl(`/about`)}
-						className={`${router.pathname === `/about` ? "active" : ""}`}
+						className={`${router.pathname === `/about` ? "active" : ""} sub-header`}
 					>
 						Why FITNESS?
 						<div className="dropdown-content">
@@ -66,6 +71,21 @@ function Header(props: any) {
 							<a href="#">Fitness Lab</a>
 							<a href="#">Personal Trining</a>
 						</div>
+					</li>
+					<li
+						className={`${router.pathname === `/about` ? "active" : ""} sub-header-mobile`}
+					>
+						<div className="title">
+							<div onClick={() => handleNavigateUrl(`/about`)}>
+								Why FITNESS?
+							</div>
+							<FaChevronDown size={20} className={'button'} onClick={() => handleOpenDropdown()} />
+						</div>
+						{open && <ul className="dropdown-content-mobile">
+							<li >Benefits</li>
+							<li >Fitness Lab</li>
+							<li >Personal Trining</li>
+						</ul>}
 					</li>
 					<li
 						onClick={() => handleNavigateUrl(`/try-sweat`)}

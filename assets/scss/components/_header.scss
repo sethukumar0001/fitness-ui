@@ -40,6 +40,9 @@ html body {
 			.logo-mobile {
 				display: none;
 			}
+			.sub-header-mobile {
+				display: none;
+			}
 			li {
 				@extend %bold-font;
 				margin: 0 1rem;
@@ -52,27 +55,29 @@ html body {
 				}
 				position: relative;
 				display: inline-block;
-				&:hover .dropdown-content {display: block;}
+				&:hover .dropdown-content {
+					display: block;
+				}
 				.dropdown-content {
 					display: none;
 					position: absolute;
 					background-color: $theme-primary-color;
 					min-width: 160px;
-					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+					box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 					z-index: 1;
 					left: -7px;
-					a{
+					padding: 12px 4px;
+					a {
 						color: $white-color;
-						padding: 12px 16px;
+						padding: 5px 5px;
 						text-decoration: none;
 						display: block;
 						&:hover {
-							color:$theme-red;
+							color: $theme-red;
 							@include transition(500ms);
 						}
 					}
-				  }
-				  
+				}
 			}
 			.active {
 				color: $theme-red;
@@ -83,7 +88,7 @@ html body {
 				background: transparent;
 				border: none;
 				outline: none;
-				color:$theme-red;
+				color: $theme-red;
 				display: none;
 				opacity: 0;
 				font-size: 1.8rem;
@@ -93,17 +98,17 @@ html body {
 	.nav-btn {
 		display: none;
 	}
-	.user-info{
+	.user-info {
 		display: flex;
 		justify-content: center;
 		cursor: pointer;
 		.profile-icon {
-			color: #979A9A;
+			color: #979a9a;
 			cursor: pointer;
 			margin-right: 10px;
 		}
-		.p{
-			color:$theme-red;
+		.p {
+			color: $theme-red;
 			@extend %bold-font;
 			font-size: 14px;
 			margin-top: 2px;
@@ -113,8 +118,11 @@ html body {
 
 @media (max-width: $mobile-devices-max-width+px) {
 	.header {
-		z-index: 1;
+		z-index: 10;
 		overflow: hidden;
+		.responsive_nav {
+			transform: none;
+		}
 		.logo {
 			display: none;
 		}
@@ -122,7 +130,8 @@ html body {
 			position: fixed;
 			top: 0;
 			left: 0;
-			height: 100%;
+			// height: 100%;
+			height: auto;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
@@ -133,6 +142,7 @@ html body {
 			transition: 1s;
 			transform: translateY(-100vh);
 			ul {
+				overflow-y: scroll;
 				.logo-parent {
 					display: flex;
 					justify-content: center;
@@ -143,8 +153,24 @@ html body {
 						width: 100px;
 					}
 				}
-
 				display: block;
+				.sub-header {
+					display: none;
+				}
+				.sub-header-mobile {
+					display: block;
+					.title {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						.button {
+							margin-left: 15px;
+						}
+					}
+					.dropdown-content {
+						display: none;
+					}
+				}
 				li {
 					display: flex;
 					margin-bottom: 10px;
@@ -153,6 +179,21 @@ html body {
 					&:hover {
 						color: $theme-red;
 						@include transition(500ms);
+					}
+					.dropdown-content-mobile {
+						background-color: #262b36;
+						box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+						z-index: 1;
+						padding: 12px 4px;
+						li {
+							color: $white-color;
+							// padding: 5px 5px;
+							text-decoration: none;
+							&:hover {
+								color: $theme-red;
+								@include transition(500ms);
+							}
+						}
 					}
 				}
 				.active {
@@ -176,20 +217,17 @@ html body {
 			margin-left: 10px;
 			margin-top: -15px;
 		}
-		.responsive_nav {
-			transform: none;
-		}
-		.user-info{
+		.user-info {
 			display: flex;
 			justify-content: center;
 			cursor: pointer;
 			.profile-icon {
-				color: #979A9A;
+				color: #979a9a;
 				cursor: pointer;
 				margin-right: 10px;
 			}
-			.p{
-				color:$theme-red;
+			.p {
+				color: $theme-red;
 			}
 		}
 	}
